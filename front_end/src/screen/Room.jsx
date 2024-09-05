@@ -201,12 +201,12 @@ export default function Room() {
       <div className="video-con flex">
         <div className="video-player">
           { !audioAvail ? <i className="fa-solid fa-microphone-slash mute"></i> : <i className="fa-solid fa-microphone mute"></i>}
-          <ReactPlayer className='video' url={myStream} playing={true} />
+          <ReactPlayer className='video' url={myStream} muted={false} playing={true} />
           <p className='username'>{myName}</p>
         </div>
         {remoteId && <div className="video-player">
           <i className="fa-solid fa-microphone mute"></i>
-          <ReactPlayer className='video'  url={remoteStream} playing={true} />
+          <ReactPlayer className='video'  url={remoteStream}  playing={true} />
           <p className='username'>{remoteName}</p>
         </div>}
         {callVisible && <button className='btn btn-primary' onClick={hadleUserCall}>Connect</button>}
