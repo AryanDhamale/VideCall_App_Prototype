@@ -1,16 +1,17 @@
 import express from "express";
 import http from "node:http";
 import { Server } from "socket.io";
+import cors from 'cors';
 import 'dotenv/config';
 
 
 const app = express();
-// const corsOptions = { origin: 'http://localhost:5173', methods: ['GET', 'POST'] }
+const corsOptions = { origin: 'http://localhost:5173', methods: ['GET', 'POST'] }
 const server = http.createServer(app);
-const io = new Server(server);
+const io = new Server(server,{cors : corsOptions});
 
 app.set("port", (process.env.PORT || 8080));
-// app.use(cors(corsOptions));
+app.use(cors(corsOptions));
 
 const socketToname = {};
 const socketToRoom = {};
