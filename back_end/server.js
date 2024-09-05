@@ -6,7 +6,7 @@ import 'dotenv/config';
 
 
 const app = express();
-const corsOptions = { origin: 'vide-call-app-prototype.vercel.app', methods: ['GET', 'POST'] }
+const corsOptions = { origin: 'https://vide-call-app-prototype-git-main-tejas-projects-c3802a60.vercel.app/', methods: ['GET', 'POST'] }
 const server = http.createServer(app);
 const io = new Server(server,{cors : corsOptions});
 
